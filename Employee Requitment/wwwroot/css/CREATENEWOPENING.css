@@ -159,3 +159,62 @@ textarea.form-control {
         margin-top: 10px;
     }
 }
+
+
+.card-header {
+    border-bottom: none;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #0b5ed7;
+    }
+
+.btn-outline-secondary {
+    border-radius: 0.25rem;
+}
+
+/* Optional: Make input focus more visible */
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+
+.experience-slider {
+    -webkit-appearance: none;
+    height: 6px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #0d6efd 0%, #0d6efd 14.3%, #dee2e6 14.3%, #dee2e6 100%);
+    outline: none;
+}
+
+    .experience-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: #0d6efd;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid white;
+        margin-top: -7px; /* center the thumb */
+    }
+
+    .experience-slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: #0d6efd;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid white;
+    }
+
+.experience-ticks {
+    font-size: 0.75rem;
+    color: #6c757d;
+    margin-top: 4px;
+}

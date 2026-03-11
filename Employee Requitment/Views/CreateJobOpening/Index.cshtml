@@ -5,171 +5,119 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
 <link rel="stylesheet" href="~/css/CREATENEWOPENING.css" />
 
+<div class="container py-5">
 
-
-
-@* 
-<style>
-
-    body {
-        background: linear-gradient(135deg,#667eea,#764ba2);
-        min-height: 100vh;
-    }
-
-    .form-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 40px 10px;
-    }
-
-    .form-box {
-        background: #fff;
-        width: 100%;
-        max-width: 1100px;
-        padding: 35px;
-        border-radius: 15px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    }
-
-    .form-header {
-        border-bottom: 1px solid #eee;
-        margin-bottom: 25px;
-        padding-bottom: 10px;
-    }
-
-        .form-header h3 {
-            font-weight: 700;
-            color: #444;
-        }
-
-    .form-label {
-        font-weight: 600;
-        font-size: 14px;
-    }
-
-    .form-control, .form-select {
-        border-radius: 8px;
-        height: 42px;
-    }
-
-    textarea.form-control {
-        height: 90px;
-        resize: none;
-    }
-
-    .input-group-text {
-        background: #f3f4f7;
-    }
-
-    .btn-submit {
-        background: linear-gradient(45deg,#36d1dc,#5b86e5);
-        border: none;
-        padding: 10px 30px;
-        font-weight: 600;
-    }
-
-    .btn-reset {
-        background: #ff6b6b;
-        border: none;
-        padding: 10px 30px;
-        font-weight: 600;
-        color: white;
-    }
-
-</style> *@
-
-<html>
-
-<div class="form-container">
-
-    <div class="form-box">
-
-        <div class="form-header">
-            <h3><i class="bi bi-briefcase"></i> Create Job Opening</h3>
+    <div class="card shadow-sm mx-auto" style="max-width: 900px;">
+        <div class="card-header bg-primary text-white d-flex align-items-center">
+            <i class="bi bi-briefcase me-2 fs-4"></i>
+            <h4 class="mb-0">Create Job Opening</h4>
         </div>
 
-        <form asp-controller="JobOpening" asp-action="Create" method="post">
+        <div class="card-body">
+            <form asp-controller="JobOpening" asp-action="Create" method="post">
 
-            <div class="row g-3">
+                <div class="row g-3">
 
-                <div class="col-md-6">
-                    <label class="form-label">Applied For</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-briefcase"></i></span>
-                        <input type="text" name="AppliedFor" class="form-control" placeholder="Enter job title">
+                    <!-- Applied For -->
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Open Position For</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-briefcase"></i></span>
+                            <input type="text" name="AppliedFor" class="form-control" placeholder="Enter job title" required>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-md-6">
-                    <label class="form-label">Reporting Head</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-person"></i></span>
-                        <input type="text" name="ReportingHead" class="form-control">
+                    <!-- Unit Name -->
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Unit Name</label>
+                        <input type="text" name="UnitName" class="form-control" placeholder="Enter unit name" required>
                     </div>
+
+                    <!-- Location -->
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Location</label>
+                        <input type="text" name="Location" class="form-control" placeholder="Enter location" required>
+                    </div>
+
+                    <!-- Qualification -->
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Qualification Required</label>
+                        <input type="text" name="Qualification" class="form-control" placeholder="E.g., Bachelor's in IT" required>
+                    </div>
+
+                    <!-- Type -->
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Type</label>
+                        <select name="Type" class="form-select" required>
+                            <option selected disabled>Select type</option>
+                            <option>Replacement</option>
+                            <option>New</option>
+                        </select>
+                    </div>
+
+                    <!-- Salary -->
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold">Salary From</label>
+                        <input type="number" name="SalaryFrom" class="form-control" placeholder="Min salary" min="0">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold">Salary To</label>
+                        <input type="number" name="SalaryTo" class="form-control" placeholder="Max salary" min="0">
+                    </div>
+
+                    <!-- Job Description -->
+                    <div class="col-12">
+                        <label class="form-label fw-bold">Job Description</label>
+                        <textarea name="JobDescription" class="form-control" rows="4" placeholder="Write job description..." required></textarea>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="col-12">
+                        <label class="form-label fw-bold">Experience (Years)</label>
+                        <div class="d-flex align-items-center gap-3">
+                            <input type="range" id="points" name="points" min="0" max="35" step="1" class="form-range experience-slider flex-grow-1">
+                            <span id="pointsValue" class="fw-bold">5</span>
+                        </div>
+                        <div class="d-flex justify-content-between experience-ticks">
+                            <!-- Generate ticks from 0 to 35 every 5 years -->
+                            <span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span><span>35</span>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="col-md-6">
-                    <label class="form-label">Unit Name</label>
-                    <input type="text" name="UnitName" class="form-control">
+                <!-- Buttons -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary me-2">
+                        <i class="bi bi-check-circle me-1"></i> Submit
+                    </button>
+                    <button type="reset" class="btn btn-outline-secondary">
+                        <i class="bi bi-x-circle me-1"></i> Reset
+                    </button>
                 </div>
 
-                <div class="col-md-6">
-                    <label class="form-label">Location</label>
-                    <input type="text" name="Location" class="form-control">
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label">Qualification Required</label>
-                    <input type="text" name="Qualification" class="form-control">
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label">Type</label>
-                    <select name="Type" class="form-select">
-                        <option selected disabled>Select</option>
-                        <option>Replacement</option>
-                        <option>New</option>
-                    </select>
-                </div>
-
-                <div class="col-md-3">
-                    <label class="form-label">Salary From</label>
-                    <input type="number" name="SalaryFrom" class="form-control">
-                </div>
-
-                <div class="col-md-3">
-                    <label class="form-label">Salary To</label>
-                    <input type="number" name="SalaryTo" class="form-control">
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label">Job Description</label>
-                    <textarea name="JobDescription" class="form-control"></textarea>
-                </div>
-
-            </div>
-
-            <div class="text-center mt-4">
-
-                <button type="submit" class="btn btn-submit text-white me-2">
-                    <i class="bi bi-check-circle"></i> Submit
-                </button>
-
-                <button type="reset" class="btn btn-reset">
-                    <i class="bi bi-x-circle"></i> Reset
-                </button>
-
-            </div>
-
-        </form>
-
+            </form>
+        </div>
     </div>
-
 </div>
 
-</html>
+<script>
+    const pointsInput = document.getElementById('points');
+    const pointsValue = document.getElementById('pointsValue');
 
+    function updateSlider() {
+        pointsValue.textContent = pointsInput.value;
+        const percent = (pointsInput.value - pointsInput.min) / (pointsInput.max - pointsInput.min) * 100;
+        pointsInput.style.background = `linear-gradient(to right, #0d6efd 0%, #0d6efd ${percent}%, #dee2e6 ${percent}%, #dee2e6 100%)`;
+    }
+
+    pointsInput.addEventListener('input', updateSlider);
+    updateSlider(); // Initialize on page load
+</script>
+
+<style>
+ 
+
+</style>

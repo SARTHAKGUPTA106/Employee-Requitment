@@ -1,3 +1,5 @@
+using Employee_Requitment.Controllers;
+
 namespace Employee_Requitment
 {
     public class Program
@@ -8,7 +10,7 @@ namespace Employee_Requitment
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddTransient<IHelloService, HELLOController>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
