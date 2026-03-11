@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "Sourcing & Screening";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+
+    .form-box {
+        background: white;
+        width: 95%;
+        max-width: 1200px;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .title {
+        font-weight: 700;
+        color: #444;
+    }
+
+    .table thead {
+        background: #667eea;
+        color: white;
+    }
+
+    .badge-exp {
+        background: #36cfc9;
+    }
+
+    .badge-notice {
+        background: #ff9f43;
+    }
+
+    .search-box {
+        max-width: 280px;
+    }
+
+</style>
+
+
+<div class="form-box">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h4 class="title">
+            <i class="bi bi-people"></i> Candidate Pipeline
+        </h4>
+
+        <div class="search-box">
+            <input type="text" class="form-control" placeholder="Search candidate...">
+        </div>
+
+    </div>
+
+
+    <div class="table-responsive">
+
+        <table class="table table-bordered table-hover align-middle">
+
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Mail Date</th>
+                    <th>Candidate Name</th>
+                    <th>Position</th>
+                    <th>Applied For</th>
+                    <th>Current CTC</th>
+                    <th>Expected CTC</th>
+                    <th>Current Organization</th>
+                    <th>Designation</th>
+                    <th>Location</th>
+                    <th>Notice Period</th>
+                    <th>Experience</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Consultant</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>12-May</td>
+                    <td>Abhinav Agarwal</td>
+                    <td>Accounts Head</td>
+                    <td>PPPL</td>
+                    <td>18 LPA</td>
+                    <td>25 LPA</td>
+                    <td>C&S Electric Ltd</td>
+                    <td>Senior Manager Finance</td>
+                    <td>Noida</td>
+                    <td><span class="badge badge-notice">90 Days</span></td>
+                    <td><span class="badge badge-exp">13 Years</span></td>
+                    <td>abhinav@gmail.com</td>
+                    <td>8899423351</td>
+                    <td>Unison</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>14-May</td>
+                    <td>Rajiv Gupta</td>
+                    <td>Accounts Head</td>
+                    <td>PPPL</td>
+                    <td>19 LPA</td>
+                    <td>25 LPA</td>
+                    <td>Munjal Auto Industries</td>
+                    <td>Plant Finance Head</td>
+                    <td>Gurgaon</td>
+                    <td><span class="badge badge-notice">90 Days</span></td>
+                    <td><span class="badge badge-exp">13.5 Years</span></td>
+                    <td>rajiv@gmail.com</td>
+                    <td>9812345678</td>
+                    <td>Unison</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>15-May</td>
+                    <td>Rishabh Kumar</td>
+                    <td>Accounts Head</td>
+                    <td>PPPL</td>
+                    <td>30% Hike</td>
+                    <td>-</td>
+                    <td>AXA Partners</td>
+                    <td>AGM Accounts</td>
+                    <td>Roorkee</td>
+                    <td><span class="badge badge-notice">45 Days</span></td>
+                    <td><span class="badge badge-exp">14 Years</span></td>
+                    <td>rishabh@gmail.com</td>
+                    <td>7830455620</td>
+                    <td>Unison</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
