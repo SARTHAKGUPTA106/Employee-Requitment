@@ -1,0 +1,328 @@
+﻿/* ==========================
+   RESET
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ==========================
+   PAGE LAYOUT
+========================== */
+body {
+    height: 100vh;
+    display: flex;
+    background: #f4f6fb;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    transition: all 0.3s ease;
+}
+
+/* ==========================
+   LEFT SIDE IMAGE
+========================== */
+.left-image {
+    width: 60%;
+    background: url('/image/recruitment.jpg') no-repeat center;
+    background-size: contain;
+    background-color: #eef1f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    transition: all 0.3s ease;
+}
+
+/* ==========================
+   RIGHT SIDE LOGIN
+========================== */
+.right-login {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    transition: all 0.3s ease;
+}
+
+/* ==========================
+   LOGIN CARD
+========================== */
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 45px;
+    width: 360px;
+    border-radius: 14px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.6s ease;
+    transition: all 0.3s ease;
+}
+
+/* ==========================
+   TITLE
+========================== */
+.company-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d2671;
+    margin-bottom: 10px;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 28px;
+    color: #333;
+}
+
+/* ==========================
+   INPUT GROUP
+========================== */
+.input-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+    .input-group input,
+    .input-group select {
+        width: 100%;
+        padding: 12px 42px;
+        border: 1px solid #dcdcdc;
+        border-radius: 8px;
+        font-size: 14px;
+        outline: none;
+        transition: all 0.25s ease;
+        background: #fafafa;
+    }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #3a47d5;
+            box-shadow: 0 0 0 3px rgba(58, 71, 213, 0.15);
+            background: white;
+        }
+
+    .input-group i {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #777;
+    }
+
+/* ==========================
+   PASSWORD TOGGLE
+========================== */
+.toggle-pass {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #1d2671, #3a47d5);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+/* ==========================
+   LINKS
+========================== */
+.links {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.forgot {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #1d2671;
+    text-decoration: none;
+}
+
+
+
+
+    .forgot:hover {
+        color: #c33764;
+    }
+
+    .forgot i{
+        margin-right : 10px;
+    }
+    /* ==========================
+   DIVIDER
+========================== */
+    .divider {
+        margin: 16px 0;
+        position: relative;
+        text-align: center;
+        font-size: 13px;
+        color: #888;
+    }
+
+    .divider:before,
+    .divider:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background: #ddd;
+    }
+
+    .divider:before {
+        left: 0;
+    }
+
+    .divider:after {
+        right: 0;
+    }
+
+/* ==========================
+   REGISTER BUTTON
+========================== */
+.register {
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    background: #c33764;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    .register:hover {
+        background: #a82d54;
+    }
+
+    .register i {
+        margin-right : 10px;
+    }
+    /* ==========================
+   ANIMATION
+========================== */
+    @keyframes fadeIn {
+        0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+/* TABLET DEVICES (768px - 1024px) */
+@media (max-width: 1024px) {
+    .left-image {
+        width: 50%;
+        padding: 30px;
+    }
+
+    .right-login {
+        width: 50%;
+    }
+
+    .login-box {
+        width: 320px;
+        padding: 35px;
+    }
+}
+
+/* SMALL TABLET / LARGE MOBILE (600px - 767px) */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-image {
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        padding: 20px;
+    }
+
+    .right-login {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+        padding: 30px 20px;
+    }
+}
+
+/* MOBILE DEVICES (up to 599px) */
+@media (max-width: 599px) {
+    .left-image {
+        height: 200px;
+        background-size: cover;
+    }
+
+    .login-box h2 {
+        font-size: 20px;
+    }
+
+    .company-title {
+        font-size: 20px;
+    }
+
+    .input-group input,
+    .input-group select {
+        padding: 10px 35px;
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .links {
+        font-size: 12px;
+    }
+
+    .register {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
